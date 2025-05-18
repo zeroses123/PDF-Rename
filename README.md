@@ -53,8 +53,8 @@ PyYAML
 ## Installation
 
 ```bash
-git clone https://github.com/<dein-user>/invoice-processor.git
-cd invoice-processor
+git clone https://github.com/zeroses123/PDF-Rename
+cd PDF-Rename
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
