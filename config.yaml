@@ -56,14 +56,10 @@ global:
 # Add your expected company names here (the ones that appear on your invoices)
 company_names:
   - "Vattenfall Europe Sales GmbH"
-  - "VHV Versicherung"
-  - "VHV Allgemeine Versicherung AG"
   - "Telekom Deutschland GmbH"
   - "Deutsche Telekom AG"
-  - "SECURITAS Alert Services GmbH"
   - "DB Fernverkehr AG"
   - "Deutsche Lufthansa AG"
-  - "reuter europe GmbH"
 
 # Similarity weights for different comparison methods
 # These weights determine how important each factor is when deciding if pages belong together
