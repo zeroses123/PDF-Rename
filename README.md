@@ -182,6 +182,5 @@ Dieses Projekt steht unter der **MIT-Lizenz** – siehe [`LICENSE`](LICENSE).
 ---
 
 ## Autor
-
-Tom Snubbel – [@zeroses](mailto:zeroses@hotmail.com)  
+Tom Goe
 Für Fragen oder Bug-Reports einfach ein Issue anlegen!
