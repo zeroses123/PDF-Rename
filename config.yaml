@@ -1,0 +1,82 @@
+# Invoice Extractor Configuration
+
+# Global settings for the invoice processing
+global:
+  # OpenAI API key for invoice text processing
+  # Leave empty to use environment variable OPENAI_API_KEY
+  openai_key: "youropenaiapikey"
+  
+  # OpenAI model to use (default: gpt-4.1-mini)
+  model: "gpt-4.1-mini"
+  
+  # Set the threshold for page similarity (0.0 to 1.0)
+  # Lower values (e.g., 0.3-0.5) will group more pages together
+  # Higher values (e.g., 0.7-0.9) require stronger similarity to group pages
+  threshold: 0.5
+  
+  # Whether to use aggressive splitting (each page as separate invoice)
+  # true: Each page will be treated as a separate invoice
+  # false: Pages will be kept together when they appear related
+  aggressive_split: false
+  
+  # Processing mode - controls how PDFs are handled
+  # Options:
+  #   'PDF_AS_INVOICE' - Each PDF file is treated as a single invoice
+  #   'BUNDLE' - One PDF file can contain multiple invoices
+  processing_mode: "BUNDLE"
+  
+  # Blank page detection threshold (0.0 to 1.0)
+  # Higher values mean stricter blank page detection
+  blank_page_threshold: 0.95
+  
+  # Directory paths for output files
+  # All paths are relative to the script location unless absolute paths are provided
+  directories:
+    # Directory for completely processed invoices
+    complete: "Rechnungen"
+    
+    # Directory for incomplete or uncertain invoices
+    incomplete: "Rechnungen-Unsicher"
+    
+    # Directory for backup of original files
+    backup: "Backup"
+    
+    # Directory for temporary files
+    temp: "temp_invoices"
+  
+  # Error handling
+  error_handling:
+    # Whether to show popup on errors
+    show_popup: true
+    
+    # Whether to keep original files in place on errors
+    keep_files_on_error: true
+
+# List of potential company names to improve recognition
+# Add your expected company names here (the ones that appear on your invoices)
+company_names:
+  - "Vattenfall Europe Sales GmbH"
+  - "VHV Versicherung"
+  - "VHV Allgemeine Versicherung AG"
+  - "Telekom Deutschland GmbH"
+  - "Deutsche Telekom AG"
+  - "SECURITAS Alert Services GmbH"
+  - "DB Fernverkehr AG"
+  - "Deutsche Lufthansa AG"
+  - "reuter europe GmbH"
+
+# Similarity weights for different comparison methods
+# These weights determine how important each factor is when deciding if pages belong together
+similarity_weights:
+  header_similarity: 0.2
+  footer_similarity: 0.1
+  margin_similarity: 0.1
+  logo_similarity: 0.3
+  text_similarity: 0.3
+  page_number_match: 0.2
+  company_name_match: 0.4
+
+# Folders to monitor for new invoice files
+# This array will be populated by right-click context menu
+folders: []
+
